@@ -1,0 +1,741 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Image Background Container (parallax) */
+.image-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('BG.jpg');
+    background-size: cover;
+    background-position: center;
+    /* fixed attachment gives a simple parallax feel */
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* Parallax Sections Over Video */
+.parallax {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+/* Optional: Overlay for readability */
+.box-main, .paras {
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll;
+        min-height: 50vh;
+        padding: 28px;
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    /* logo left, links to the right; navbar spans full width */
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* reduced padding to make navbar shorter */
+    padding: 6px 20px;
+    z-index: 2;
+}
+
+.background {
+    background: black;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+    /* push nav items to the right of the navbar */
+    margin-left: auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make sure logo doesn't grow and spacing behaves */
+.navbar .logo { flex: 0 0 auto; }
+.navbar .nav-list { flex: 0 1 auto; }
+
+/* Responsive: on small screens, allow nav items to wrap under the logo */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+    }
+    .logo img { max-height: 56px; }
+    .nav-list {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 8px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .nav-list li { font-size: 16px; padding: 6px 6px; }
+}
+
+.logo img {
+    /* constrain logo height so navbar doesn't become too tall */
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+}
+
+.nav-list li {
+    list-style: none;
+    /* slightly smaller spacing and font to reduce nav height */
+    padding: 6px 8px;
+    font-size: 18px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-list li a:hover {
+    color: grey;
+}
+
+.rightnav {
+    width: 100%;
+    text-align: right;
+    /* remove extra top margin so items align in a shorter navbar */
+    margin-top: 0;
+}
+
+.firstsection,
+.secondsection,
+.section {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    margin: auto;
+}
+
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    height: 80%;
+}
+
+.firsthalf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secondhalf {
+    width: 30%;
+}
+
+.secondhalf img {
+    width: 70%;
+    border: 4px solid white;
+    border-radius: 150px;
+    display: block;
+    margin: auto;
+}
+
+.text-big {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.text-small {
+    font-size: 18px;
+}
+
+.btn {
+    padding: 8px 20px;
+    margin: 7px 0;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    margin: 7px 5px;
+    vertical-align: middle;
+}
+
+.section-Left {
+    flex-direction: row-reverse;
+}
+
+.paras {
+    padding: 0px 65px;
+}
+
+.thumbnail img {
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 26px;
+    margin-top: 19px;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-footer {
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+#search {
+    box-sizing: border-box;
+    width: 70%;
+    padding: 8px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Styles for the Flavors Page (page1.html) --- */
+
+/* Ensures the entire section uses a dark/black background */
+.flavors-section {
+    background: black;
+    color: white; /* Default text color */
+    padding: 50px 20px;
+    text-align: center;
+    /* Use min-height to ensure the section is visually prominent */
+    min-height: 100vh; 
+}
+
+/* Header style for "CHOOSE YOUR BOX" */
+.choose-box-header {
+    margin-bottom: 50px;
+}
+
+.choose-box-header .text-big {
+    font-size: 3em; /* Adjust size as needed */
+    letter-spacing: 2px;
+}
+
+.red-text {
+    color: #cc0000; /* Use a deep red color */
+}
+
+/* Flexbox container for the three columns */
+.flavors-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between the boxes */
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Styling for each individual flavor box */
+.flavor-box {
+    width: 30%; /* Three boxes in a row with some gap */
+    min-width: 300px; /* Minimum size for readability */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Placeholder/Styling for the Noodle Image */
+.flavor-image-placeholder {
+    width: 100%;
+    max-width: 350px; /* Size of the image/bowl */
+    height: 350px; 
+    background-color: #1a1a1a; 
+    border-radius: 50%; /* Makes it circular like a bowl */
+    margin-bottom: 20px;
+    overflow: hidden; 
+}
+
+/* Image styling for the actual image tag inside the placeholder */
+.flavor-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the circular container without distortion */
+}
+
+
+.flavor-title {
+    font-size: 1.5em;
+    color: #cc0000; /* Red title to match the design */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.flavor-description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 100px; /* Ensures descriptions align if they are slightly different lengths */
+}
+
+.flavor-recommendation {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: auto; /* Pushes recommendation to the bottom */
+}
+
+.flavor-recommendation strong {
+    color: #ff9900; /* A contrasting color for the noodle type */
+}
+
+
+/* --- Responsive Adjustments for Flavors Page --- */
+@media screen and (max-width: 1000px) {
+    .flavors-container {
+        flex-direction: column; /* Stacks the boxes vertically on smaller screens */
+        align-items: center;
+    }
+    .flavor-box {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* --- Styles for the Spices Page (page2.html) - UPDATED FOR IMAGE FIT --- */
+
+.spices-hero-section {
+    background: black; /* Dark background as per your overall theme */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; /* Add some vertical padding */
+    color: white; /* Default text color */
+}
+
+.spices-content-wrapper {
+    display: flex;
+    width: 90%; /* Adjust overall width as needed */
+    max-width: 1400px; /* Maximum width for the content */
+    background: black; /* Ensure content background is black */
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.spices-text-column {
+    flex: 1; /* Takes up one part of the flexible space */
+    padding: 80px 60px; /* Ample padding for text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.spices-main-title {
+    font-size: 3.8em; /* Large title */
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: white; /* Ensure title is white */
+}
+
+.red-highlight {
+    color: #cc0000; /* Red color for emphasis (reused from .red-text) */
+}
+
+.spices-subtitle {
+    font-family: 'Playfair Display', serif; 
+    font-style: italic;
+    font-size: 1.8em;
+    color: #cc0000; /* Red for the subtitle */
+    margin-bottom: 40px;
+    transform: translateX(10px); /* Slight indent for "A Taste from the East" effect */
+}
+
+.spices-description-box {
+    background-color: #1a1a1a; /* Darker box for description */
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.spices-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #cccccc; /* Lighter grey for readability */
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #cc0000; /* Red button */
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #ff3333; /* Lighter red on hover */
+}
+
+.slider-nav-arrows {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px; /* Space below the description box */
+}
+
+.arrow-btn {
+    background-color: #222; /* Darker button background */
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+.spices-image-column {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    position: relative;
+    overflow: hidden; 
+    /* Removed background-color: #cc0000; from here */
+}
+
+.spices-image-container {
+    background-color: #cc0000; /* Moved the red background here */
+    width: 100%;
+    height: 100%; /* Make it fill the column */
+    max-height: 450px; /* Set a max-height to control its size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Adjusted transform for better fit - experiment with these values */
+    transform: translateX(-10%) translateY(0%) rotateY(-5deg) scale(0.95); 
+    transform-origin: left center;
+    padding: 20px; /* Add padding inside the red container */
+    box-sizing: border-box; /* Include padding in width/height */
+    border-radius: 8px; /* Slightly rounded corners for the red box */
+}
+
+.spices-hero-image {
+    width: 100%;
+    height: 100%; /* Now the image fills the red container */
+    object-fit: cover; /* Ensures the image covers the container */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    border-radius: 4px; /* Slight rounding for the image itself */
+}
+
+/* Responsive Adjustments for Spices Page */
+@media screen and (max-width: 1000px) {
+    .spices-content-wrapper {
+        flex-direction: column; /* Stack columns vertically */
+        width: 95%;
+    }
+
+    .spices-text-column {
+        padding: 50px 30px;
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .spices-main-title {
+        font-size: 2.8em;
+    }
+
+    .spices-subtitle {
+        font-size: 1.4em;
+        transform: none; /* Remove horizontal transform */
+    }
+
+    .spices-description-box {
+        padding: 20px;
+    }
+
+    .slider-nav-arrows {
+        justify-content: center; /* Center arrows on small screens */
+    }
+
+    .spices-image-column {
+        height: 350px; /* Give a reasonable height to the image column on mobile */
+        padding: 20px;
+    }
+
+    .spices-image-container {
+        transform: none; /* Remove transform for a straightforward look on small screens */
+        width: 90%; /* Adjust image container size for mobile */
+        height: 100%;
+        padding: 15px;
+    }
+    .spices-hero-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* --- New Styles for the Process Page (page3.html) --- */
+
+.process-hero-section {
+    background: black; /* Dark background */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    color: white;
+}
+
+.process-content-wrapper {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    background: black;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.process-text-column {
+    flex: 1;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.process-main-title {
+    font-size: 3.8em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.process-subtitle {
+    font-family: 'Playfair Display', serif; /* Script-like font for style */
+    font-style: italic;
+    font-size: 1.8em;
+    color: #cc0000;
+    margin-bottom: 40px;
+    transform: translateX(10px);
+}
+
+.process-description-box {
+    background-color: #1a1a1a;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.process-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 0;
+    color: #cccccc;
+}
+
+.process-image-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-image-container {
+    background-color: #cc0000; /* Red background for the image frame */
+    width: 100%;
+    height: 100%; 
+    max-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Angled look for the image box */
+    transform: translateX(10%) translateY(0%) rotateY(5deg) scale(0.95); 
+    transform-origin: right center; /* Reverse origin for right-side angle */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.process-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3); /* Shadow adjusted for right side */
+    border-radius: 4px;
+}
+
+/* Step-by-Step Section */
+.steps-section {
+    background: black;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.process-title {
+    margin-bottom: 60px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    flex: 1 1 200px; /* Allows 4 cards in a row, with minimum width */
+    padding: 30px 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #cc0000;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+}
+
+.step-title {
+    font-size: 1.2em;
+    color: #cc0000;
+    margin-top: 20px; /* Space for the number to overlap */
+    margin-bottom: 10px;
+}
+
+.step-description {
+    font-size: 0.95em;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments for Process Page */
+@media screen and (max-width: 1000px) {
+    .process-content-wrapper {
+        flex-direction: column; 
+    }
+
+    .process-text-column {
+        padding: 50px 30px;
+        text-align: center;
+    }
+
+    .process-subtitle {
+        transform: none;
+    }
+    
+    .process-image-column {
+        height: 350px;
+    }
+
+    .process-image-container {
+        transform: none; /* Remove angle on mobile */
+        width: 90%;
+        height: 100%;
+    }
+    
+    .steps-container {
+        flex-direction: column; /* Stack steps vertically on small screens */
+        gap: 40px;
+    }
+    
+    .step-card {
+        flex: 0 0 80%; /* Takes up most of the width */
+        margin: 0 auto;
+    }
+}
