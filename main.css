@@ -2,6 +2,14 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: transparent;
 }
 
 /* Image Background Container (parallax) */
@@ -9,17 +17,16 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-image: url('BG.jpg');
     background-size: cover;
     background-position: center;
-    /* fixed attachment gives a simple parallax feel */
     background-attachment: fixed;
-    z-index: -1;
+    z-index: 0;
 }
 
-/* Parallax Sections Over Video */
+/* Parallax Sections */
 .parallax {
     position: relative;
     z-index: 1;
@@ -29,6 +36,7 @@
     justify-content: center;
     padding: 100px 20px;
     color: white;
+    
 }
 
 /* Optional: Overlay for readability */
@@ -141,21 +149,27 @@
 .firstsection,
 .secondsection,
 .section {
-    height: 400px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 90%;
-    margin: auto;
+    width: 100%;
+    background: transparent;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .box-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
+    width: 100%;
+    max-width: 1400px;
     margin: auto;
     height: 80%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .firsthalf {
@@ -368,11 +382,14 @@ img {
 
 .spices-content-wrapper {
     display: flex;
-    width: 90%; /* Adjust overall width as needed */
+    width: 100%; /* Full width to prevent gaps */
     max-width: 1400px; /* Maximum width for the content */
     background: black; /* Ensure content background is black */
     position: relative;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    margin: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .spices-text-column {
@@ -738,4 +755,142 @@ img {
         flex: 0 0 80%; /* Takes up most of the width */
         margin: 0 auto;
     }
+
+
+
 }
+
+/* --- New Styles for the Noodle Around the World Page (page4.html) --- */
+
+/* --- New Styles for Noodle Around the World Page (page4.html) --- */
+
+.global-noodles-section {
+    background: black; /* Consistent dark background */
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.global-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: black;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.global-header .text-big {
+    font-size: 3.5em; /* Large title to mimic Flavors page */
+    margin-bottom: 5px;
+}
+
+.global-intro {
+    font-size: 1.1em;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.global-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.global-dish-card {
+    flex: 1 1 300px; /* Takes up one-third of the container */
+    background-color: #1a1a1a; /* Dark card background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.global-dish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(204, 0, 0, 0.5); /* Subtle red shadow on hover */
+}
+
+.dish-image-placeholder {
+    width: 100%;
+    height: 200px; /* Consistent image height */
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 3px solid #cc0000; /* Red border for emphasis */
+}
+
+.global-noodle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.global-dish-card:hover .global-noodle-img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.dish-country-tag {
+    display: inline-block;
+    background-color: #cc0000;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 50px; /* Pill shape */
+    margin-bottom: 15px;
+}
+
+.dish-title {
+    font-size: 1.8em;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.dish-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #b0b0b0;
+    min-height: 100px; /* Ensure description box is visually consistent */
+}
+
+.dish-info {
+    font-size: 0.9em;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    color: #cc0000;
+    font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 850px) {
+    .global-noodles-section {
+        padding: 50px 20px;
+    }
+
+    .global-header .text-big {
+        font-size: 2.5em;
+    }
+
+    .global-container {
+        gap: 20px;
+    }
+    
+    .global-dish-card {
+        flex: 1 1 100%; /* Stack cards vertically */
+        padding: 25px;
+    }
+}
+
